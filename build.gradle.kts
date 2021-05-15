@@ -33,6 +33,9 @@ dependencies {
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
+	testImplementation("io.kotest:kotest-runner-junit5:4.4.1");
+	testImplementation("io.kotest:kotest-property:4.4.1");
+	testImplementation("io.mockk:mockk:1.11.0")
 }
 
 tasks.withType<KotlinCompile> {
