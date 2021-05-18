@@ -28,4 +28,10 @@ class QuestionHandler(
             ResponseEntity("Bad request", HttpStatus.BAD_REQUEST)
     }
 
+    @GetMapping("/questions")
+    fun getAllQuestions(): ResponseEntity<List<Question>> {
+        val questions = questionService.getAllQuestions()
+        return ResponseEntity(questions, HttpStatus.OK);
+    }
+
 }

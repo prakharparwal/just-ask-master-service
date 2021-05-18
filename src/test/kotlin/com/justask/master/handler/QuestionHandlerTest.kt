@@ -50,4 +50,16 @@ class QuestionHandlerTest() {
         response.body shouldBe "Bad request"
 
     }
+
+    @Test
+    fun `should return all posted questions`() {
+        val questionHandler = QuestionHandler(questionService)
+
+        every { questionService.getAllQuestions() } returns listOf(Question(101, "Test question?"))
+
+        val response = questionHandler.getAllQuestions()
+
+        response.statusCode shouldBe HttpStatus.OK
+        response.body shouldBe listOf(Question(101, "Test question?"))
+    }
 }

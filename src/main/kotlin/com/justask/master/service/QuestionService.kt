@@ -10,5 +10,9 @@ class QuestionService {
         return true;
     }
 
+    fun getAllQuestions(): List<Question> {
+        return listOf(Question(101, "Test question"), Question(102, "Mock question>"))
+    }
+
 
 }
